@@ -1,0 +1,3 @@
+/* Copyright 2026 Shanghai Rujing Zhihua Information Technology Co., Ltd. */
+package cn.zhuatech.itsm.repository; import cn.zhuatech.itsm.model.ConfigurationItem; import org.springframework.data.jpa.repository.JpaRepository; import java.util.List;
+public interface ConfigurationItemRepository extends JpaRepository<ConfigurationItem,Long>{List<ConfigurationItem> findAllByOrderByCodeAsc();long countByStatus(ConfigurationItem.Status status);}
