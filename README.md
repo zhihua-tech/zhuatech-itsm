@@ -64,6 +64,10 @@ npm run dev:demo
 
 完整部署执行 `cp .env.example .env`，配置安全密码和 `JWT_SECRET` 后运行 `docker compose up --build`。
 
+## 新增：IT 变更风险评审
+
+新增 `POST /api/admin/change-risk`，根据影响服务和用户规模、回退演练、备份、监控、变更窗口、近期失败以及紧急属性计算风险，自动输出 `STANDARD`、`CAB_REQUIRED` 或 `REJECT` 决策及上线前控制项。
+
 ## 从社区版走向企业生产
 
 可继续加入 SSO、LDAP/AD、邮件与企微机器人、自动分派、值班表、监控告警接入、远程协助、CMDB 自动发现、服务成本、满意度、知识推荐和 ITIL 流程审计。
