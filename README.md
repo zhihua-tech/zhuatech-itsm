@@ -83,3 +83,7 @@ npm run dev:demo
 | ![微信咨询二维码一](docs/images/zhuatech-wechat-consulting.png) | ![微信咨询二维码二](docs/images/zhuatech-wechat-consulting-2.png) |
 
 SEO 关键词：ITSM 开源源码、IT 服务管理系统、服务台、工单系统、SLA 管理、CMDB、事件管理、Java ITSM、Vue ITSM、知华科技。
+
+## SLA 违约预测
+
+新增 `POST /api/itsm/insights/sla-breach-forecast`，综合已耗时、剩余工作量、支持组排队深度和优先级预测解决时间，返回 SLA 缓冲、风险分与 `ON_TRACK / AT_RISK / BREACH_LIKELY`。高风险工单会自动给出转派、协同处理和客户沟通建议。
