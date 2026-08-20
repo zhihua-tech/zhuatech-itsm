@@ -87,3 +87,7 @@ SEO 关键词：ITSM 开源源码、IT 服务管理系统、服务台、工单�
 ## SLA 违约预测
 
 新增 `POST /api/itsm/insights/sla-breach-forecast`，综合已耗时、剩余工作量、支持组排队深度和优先级预测解决时间，返回 SLA 缓冲、风险分与 `ON_TRACK / AT_RISK / BREACH_LIKELY`。高风险工单会自动给出转派、协同处理和客户沟通建议。
+
+## 重大事件分级处置
+
+新增 `POST /api/itsm/insights/major-incident-triage`，根据受影响用户、关键服务中断、数据丢失、安全事件、绕行方案和持续时间自动判定 `P1 / P2 / P3`，同步返回作战室、管理层沟通、下一次通报时限及处置动作，帮助服务台统一重大事件响应口径。
