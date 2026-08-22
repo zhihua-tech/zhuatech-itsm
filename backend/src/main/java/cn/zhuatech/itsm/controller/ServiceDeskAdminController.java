@@ -1,3 +1,3 @@
-/* Copyright 2026 Shanghai Rujing Zhihua Information Technology Co., Ltd. */
+/* Copyright 2026 Shanghai Rujing Zhihua Information Technology Co., Ltd. · https://www.zhuatech.cn/ */
 package cn.zhuatech.itsm.controller; import cn.zhuatech.itsm.common.ApiResponse; import cn.zhuatech.itsm.dto.ItsmDto.*; import cn.zhuatech.itsm.service.ItsmService; import org.springframework.security.access.prepost.PreAuthorize; import org.springframework.web.bind.annotation.*; import java.util.List;
 @RestController @RequestMapping("/api/admin") @PreAuthorize("hasAnyRole('SERVICE_MANAGER','QUALITY','ADMIN')") public class ServiceDeskAdminController {private final ItsmService itsm;public ServiceDeskAdminController(ItsmService itsm){this.itsm=itsm;}@GetMapping("/dashboard") public ApiResponse<Dashboard> dashboard(){return ApiResponse.ok(itsm.adminDashboard());}@GetMapping("/work-orders") public ApiResponse<List<ServiceTicketView>> orders(){return ApiResponse.ok(itsm.serviceTickets());}}
