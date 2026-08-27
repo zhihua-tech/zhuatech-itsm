@@ -1,0 +1,8 @@
+-- Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/
+CREATE TABLE deep_itsm_ci (id BIGINT PRIMARY KEY AUTO_INCREMENT,ci_code VARCHAR(255) NOT NULL,name VARCHAR(255),type VARCHAR(255),criticality VARCHAR(255),owner VARCHAR(255),status VARCHAR(32) NOT NULL,lock_version BIGINT NOT NULL,UNIQUE KEY uk_deep_itsm_ci(ci_code));
+CREATE TABLE deep_itsm_incident (id BIGINT PRIMARY KEY AUTO_INCREMENT,incident_no VARCHAR(255) NOT NULL,ci_id BIGINT,priority VARCHAR(16),summary VARCHAR(255),status VARCHAR(32) NOT NULL,assignee VARCHAR(255),due_at DATETIME(6),major BOOLEAN NOT NULL,resolution VARCHAR(255),resolved_at DATETIME(6),lock_version BIGINT NOT NULL,UNIQUE KEY uk_deep_itsm_incident(incident_no));
+CREATE TABLE deep_itsm_problem (id BIGINT PRIMARY KEY AUTO_INCREMENT,problem_no VARCHAR(255) NOT NULL,incident_id BIGINT,root_cause VARCHAR(255),known_error VARCHAR(255),workaround VARCHAR(255),status VARCHAR(32) NOT NULL,lock_version BIGINT NOT NULL,UNIQUE KEY uk_deep_itsm_problem(problem_no));
+CREATE TABLE deep_itsm_change (id BIGINT PRIMARY KEY AUTO_INCREMENT,change_no VARCHAR(255) NOT NULL,ci_id BIGINT,change_type VARCHAR(32),risk_score INT NOT NULL,description VARCHAR(255),rollback_plan VARCHAR(255),status VARCHAR(32) NOT NULL,evidence_hash VARCHAR(255),lock_version BIGINT NOT NULL,UNIQUE KEY uk_deep_itsm_change(change_no));
+CREATE TABLE deep_itsm_audit (id BIGINT PRIMARY KEY AUTO_INCREMENT,action VARCHAR(255),aggregate_no VARCHAR(255),detail VARCHAR(255),created_at DATETIME(6));
+CREATE INDEX idx_deep_itsm_incident_sla ON deep_itsm_incident(status,priority,due_at);
+CREATE INDEX idx_deep_itsm_change_cab ON deep_itsm_change(status,risk_score);

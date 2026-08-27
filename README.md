@@ -1,5 +1,8 @@
 # ZhuaTech ITSM 社区源码版
 
+## IT 服务治理深化（2026-08）
+
+已实现配置项、P1—P4 事件、问题根因/已知错误、CAB 风险评审、回退方案与实施证据门禁。请阅读 [ITSM 企业服务治理闭环](docs/ENTERPRISE_DEEPENING.md)。
 面向企业 IT 服务台和运维团队的事件、请求、问题、变更、SLA 与配置管理系统。
 
 **发布方：知华科技（上海如静知华信息科技有限公司）** · [官方网站 https://www.zhuatech.cn/](https://www.zhuatech.cn/)
