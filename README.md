@@ -1,5 +1,9 @@
 # ZhuaTech ITSM 社区源码版
 
+## 企业级增强：重大事件关闭治理
+
+新增恢复稳定期、终结通报、安全复核、时间线、根因、纠正措施和关联记录门禁，详见 [重大事件关闭治理](docs/ENTERPRISE_INCIDENT_CLOSURE.md)。
+
 ## IT 服务治理深化（2026-08）
 
 已实现配置项、P1—P4 事件、问题根因/已知错误、CAB 风险评审、回退方案与实施证据门禁。请阅读 [ITSM 企业服务治理闭环](docs/ENTERPRISE_DEEPENING.md)。
