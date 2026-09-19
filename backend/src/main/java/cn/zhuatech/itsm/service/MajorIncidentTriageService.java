@@ -8,8 +8,14 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class MajorIncidentTriageService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(
         @Min(0) int affectedUsers,
         @Min(0) int criticalServicesDown,
@@ -19,9 +25,15 @@ public class MajorIncidentTriageService {
         @Min(0) int elapsedMinutes
     ) {}
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Result(String severity, boolean warRoomRequired, boolean executiveCommunicationRequired,
                          int nextUpdateMinutes, List<String> actions) {}
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Result triage(Request request) {
         boolean severe = Boolean.TRUE.equals(request.dataLossSuspected())
             || Boolean.TRUE.equals(request.securityIncident())

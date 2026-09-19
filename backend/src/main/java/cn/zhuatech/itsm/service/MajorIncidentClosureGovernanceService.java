@@ -4,8 +4,14 @@ import jakarta.validation.constraints.NotBlank;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class MajorIncidentClosureGovernanceService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Assessment assess(Request request) {
         List<String> blockers=new ArrayList<>(); List<String> actions=new ArrayList<>();
         if(!request.serviceRestored()) blockers.add("业务服务尚未恢复");
@@ -19,10 +25,19 @@ public class MajorIncidentClosureGovernanceService {
         Decision decision=!blockers.isEmpty()?Decision.HOLD:!actions.isEmpty()?Decision.REVIEW:Decision.CLOSE;
         return new Assessment(request.incidentNo(),decision,List.copyOf(blockers),List.copyOf(actions));
     }
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(@NotBlank String incidentNo,boolean serviceRestored,boolean monitoringStable,
                           boolean stakeholderCommunicationComplete,boolean timelineCaptured,
                           boolean rootCauseKnown,boolean correctiveActionsOwned,boolean problemRecordLinked,
                           boolean securityIncident,boolean securityReviewComplete){}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Assessment(String incidentNo,Decision decision,List<String> blockers,List<String> actions){}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public enum Decision{CLOSE,REVIEW,HOLD}
 }

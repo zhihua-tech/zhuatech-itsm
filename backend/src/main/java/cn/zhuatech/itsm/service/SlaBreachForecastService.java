@@ -9,8 +9,14 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class SlaBreachForecastService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Result forecast(Request request) {
         int queueDelay = request.currentQueueDepth() * 10;
         int projectedResolutionMinutes = request.elapsedMinutes() + request.remainingWorkMinutes() + queueDelay;
@@ -31,11 +37,17 @@ public class SlaBreachForecastService {
             riskScore, decision, actions);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(@NotBlank String ticketNo, @Min(0) int elapsedMinutes,
                           @Min(1) int slaMinutes, @Min(0) int remainingWorkMinutes,
                           @Min(0) int currentQueueDepth,
                           @Pattern(regexp = "P[1-4]") String priority) {}
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Result(String ticketNo, int projectedResolutionMinutes, int bufferMinutes,
                          int riskScore, String decision, List<String> actions) {}
 }

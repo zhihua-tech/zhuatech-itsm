@@ -7,9 +7,15 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 class SlaBreachForecastServiceTests {
     private final SlaBreachForecastService service = new SlaBreachForecastService();
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test
     void predictsBreachFromWorkAndQueueDelay() {
         var result = service.forecast(new SlaBreachForecastService.Request(
@@ -21,6 +27,9 @@ class SlaBreachForecastServiceTests {
         assertTrue(result.actions().size() >= 2);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test
     void keepsLowLoadTicketOnTrack() {
         var result = service.forecast(new SlaBreachForecastService.Request(

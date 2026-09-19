@@ -11,11 +11,20 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class AiTicketTriageService {
     private final OpenAiCompatibleGateway gateway;
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public AiTicketTriageService(OpenAiCompatibleGateway gateway) { this.gateway = gateway; }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Result triage(Request request) {
         String text = (request.title() + " " + request.description()).toLowerCase(Locale.ROOT);
         String category;
@@ -51,13 +60,22 @@ public class AiTicketTriageService {
             enhanced.isPresent() ? "EXTERNAL_MODEL" : "LOCAL_RULES", metadata.provider(), metadata.model());
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     private boolean containsAny(String text, String... keywords) {
         for (String keyword : keywords) if (text.contains(keyword)) return true;
         return false;
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(@NotBlank String title, @NotBlank @Size(max = 8000) String description,
                           @Min(0) int affectedUsers, @NotNull Boolean vipUser, @NotNull Boolean serviceDown) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Result(String category, String priority, String assignmentQueue, int urgencyScore,
                          List<String> firstResponseActions, String suggestedReply,
                          String aiMode, String provider, String model) {}

@@ -1,3 +1,12 @@
 /* Copyright 2026 Shanghai Rujing Zhihua Information Technology Co., Ltd. · https://www.zhuatech.cn/ */
 package cn.zhuatech.itsm.repository; import cn.zhuatech.itsm.model.ConfigurationItem; import org.springframework.data.jpa.repository.JpaRepository; import java.util.List;
-public interface ConfigurationItemRepository extends JpaRepository<ConfigurationItem,Long>{List<ConfigurationItem> findAllByOrderByCodeAsc();long countByStatus(ConfigurationItem.Status status);}
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
+public interface ConfigurationItemRepository extends JpaRepository<ConfigurationItem,Long>{/**
+                                                                                            * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+                                                                                            */
+List<ConfigurationItem> findAllByOrderByCodeAsc();/**
+                                                                                                                                              * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+                                                                                                                                              */
+long countByStatus(ConfigurationItem.Status status);}
