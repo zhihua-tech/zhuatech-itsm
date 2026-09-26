@@ -12,7 +12,7 @@ public class UserAccount extends BaseEntity {
     public enum Role { ADMIN, SERVICE_MANAGER, AGENT, QUALITY }
     @Column(nullable=false,unique=true,length=32) private String username; @Column(nullable=false) private String password;
     @Column(nullable=false,length=50) private String fullName; @Enumerated(EnumType.STRING) @Column(nullable=false,length=20) private Role role;
-    @Column(name="work_center_code",length=32) private String supportGroupCode; @Column(nullable=false) private boolean enabled=true;
+    @Column(name="support_group_code",length=32) private String supportGroupCode; @Column(nullable=false) private boolean enabled=true;
     /**
      * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
      */
