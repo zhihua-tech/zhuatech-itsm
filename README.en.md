@@ -1,5 +1,11 @@
 [简体中文](README.md) | **English**
 
+## 2026-10-23 update: Service dependency blast radius
+
+Traverses declared service dependencies from failed services to dependent consumers, retaining shortest evidence paths and critical-business flags without changing CMDB records.
+
+After signing in to the real backend, open the bottom-right business calculation tool to submit structured input, inspect calculated results and export complete JSON. The endpoint is `POST /api/workbench/service-blast-radius` with the existing JWT. Computation is implemented server-side; it does not query another user's records, persist business documents, approve transactions or invoke external models. See [algorithm, sample and test notes](docs/AI_WORKFLOW_UPGRADE_20261023.md).
+
 # ZhuaTech IT Service Management
 
 > A source-available enterprise project by [ZhuaTech](https://www.zhuatech.cn/) for enterprise collaboration, workflow, governance, and service delivery.
