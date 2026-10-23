@@ -1,0 +1,65 @@
+[
+  {
+    "patch": {},
+    "expected": {
+      "decision": "PASS",
+      "billableResponseMinutes": "#45",
+      "billableResolutionMinutes": "#480"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "responsePaused": "14"
+    },
+    "expected": {
+      "decision": "HOLD",
+      "responseOverdue": "#1"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "resolutionPaused": "19"
+    },
+    "expected": {
+      "decision": "HOLD",
+      "resolutionOverdue": "#1"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "responsePaused": "61"
+    },
+    "expected": {},
+    "error": true
+  },
+  {
+    "patch": {
+      "resolutionElapsed": "59",
+      "resolutionPaused": "0"
+    },
+    "expected": {},
+    "error": true
+  },
+  {
+    "patch": {
+      "responseLimit": "0"
+    },
+    "expected": {
+      "decision": "HOLD"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "responseElapsed": "0",
+      "responsePaused": "0"
+    },
+    "expected": {
+      "billableResponseMinutes": "#0"
+    },
+    "error": false
+  }
+]

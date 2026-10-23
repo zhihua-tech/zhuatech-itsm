@@ -1,0 +1,97 @@
+{
+  "slug": "itsm",
+  "title": "响应与解决SLA暂停扣减",
+  "fields": [
+    {
+      "key": "id",
+      "label": "记录编号",
+      "type": "ID"
+    },
+    {
+      "key": "responseElapsed",
+      "label": "响应经过分钟",
+      "type": "NUMBER",
+      "scale": 6,
+      "min": "0",
+      "max": "1000000000000"
+    },
+    {
+      "key": "responsePaused",
+      "label": "响应批准暂停分钟",
+      "type": "NUMBER",
+      "scale": 6,
+      "min": "0",
+      "max": "1000000000000"
+    },
+    {
+      "key": "responseLimit",
+      "label": "响应时限分钟",
+      "type": "NUMBER",
+      "scale": 6,
+      "min": "0",
+      "max": "1000000000000"
+    },
+    {
+      "key": "resolutionElapsed",
+      "label": "解决经过分钟",
+      "type": "NUMBER",
+      "scale": 6,
+      "min": "0",
+      "max": "1000000000000"
+    },
+    {
+      "key": "resolutionPaused",
+      "label": "解决批准暂停分钟",
+      "type": "NUMBER",
+      "scale": 6,
+      "min": "0",
+      "max": "1000000000000"
+    },
+    {
+      "key": "resolutionLimit",
+      "label": "解决时限分钟",
+      "type": "NUMBER",
+      "scale": 6,
+      "min": "0",
+      "max": "1000000000000"
+    }
+  ],
+  "columns": [
+    {
+      "key": "billableResponseMinutes",
+      "label": "净响应分钟"
+    },
+    {
+      "key": "billableResolutionMinutes",
+      "label": "净解决分钟"
+    },
+    {
+      "key": "responseOverdue",
+      "label": "响应超时分钟"
+    },
+    {
+      "key": "resolutionOverdue",
+      "label": "解决超时分钟"
+    }
+  ],
+  "description": "分别扣除已批准且不重叠的响应/解决暂停分钟，独立核对两个SLA，避免只因响应及时就忽略解决超时。",
+  "owner": "上海如静知华信息科技有限公司",
+  "website": "https://www.zhuatech.cn/",
+  "authorization": "商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。",
+  "version": 1,
+  "notes": "输入均须为已获授权的同口径数据。金额固定人民币元；比例为百分数。核算结果只用于复核，未审批、未写库、未发起外部调用，也未触发付款、签名、资料销毁或设备控制。建议不构成法律、安全、会计或碳核证结论。",
+  "sample": {
+    "asOf": "2026-10-24",
+    "records": [
+      {
+        "id": "ITEM-001",
+        "responseElapsed": "60",
+        "responsePaused": "15",
+        "responseLimit": "45",
+        "resolutionElapsed": "500",
+        "resolutionPaused": "20",
+        "resolutionLimit": "480"
+      }
+    ]
+  }
+}
